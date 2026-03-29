@@ -1,12 +1,13 @@
 // Note structure
 use fraction::ToPrimitive;
+use serde::{Serialize, Deserialize};
 
 use crate::error::{GpError, GpResult};
 use crate::types::effects::DEFAULT_VELOCITY;
 use crate::types::enums::NoteType;
 use super::effects::NoteEffect;
 
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Note {
     pub value: i16,
     pub velocity: i16,

@@ -1,9 +1,10 @@
 // Measure-related enumerations
 use crate::error::{GpError, GpResult};
+use serde::{Serialize, Deserialize};
 
 /// An enumeration of different triplet feels.
 #[repr(u8)]
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum TripletFeel {
     None,
     Eighth,
@@ -33,7 +34,7 @@ pub(crate) fn from_triplet_feel(value: &TripletFeel) -> u8 {
 /// An enumeration of available clefs
 #[allow(dead_code)]
 #[repr(u8)]
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub enum MeasureClef {
     Treble,
     Bass,
@@ -43,7 +44,7 @@ pub enum MeasureClef {
 
 /// A line break directive: `NONE: no line break`, `BREAK: break line`, `Protect the line from breaking`.
 #[repr(u8)]
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub enum LineBreak {
     None,
     Break,
@@ -68,7 +69,7 @@ pub(crate) fn from_line_break(value: &LineBreak) -> u8 {
 
 /// A navigation sign like *Coda* (𝄌: U+1D10C) or *Segno* (𝄋 or 𝄉: U+1D10B or U+1D109).
 #[repr(u8)]
-#[derive(Debug, Clone, PartialEq, Eq, Hash)]
+#[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub enum DirectionSign {
     Coda,
     DoubleCoda,

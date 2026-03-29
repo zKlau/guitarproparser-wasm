@@ -1,9 +1,10 @@
 // Note-related enumerations
 use crate::error::{GpError, GpResult};
+use serde::{Serialize, Deserialize};
 
 /// An enumeration of all supported slide types.
 #[repr(i8)]
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum SlideType {
     IntoFromAbove = -2, //-2
     IntoFromBelow = -1, //-1
@@ -44,7 +45,7 @@ pub(crate) fn from_slide_type(value: &SlideType) -> i8 {
 
 /// An enumeration of all note types.
 #[repr(u8)]
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum NoteType {
     Rest, //0
     Normal,
@@ -75,7 +76,7 @@ pub(crate) fn from_note_type(value: &NoteType) -> u8 {
 
 /// Left and right hand fingering used in tabs and chord diagram editor.
 #[repr(i8)]
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Fingering {
     /// Open or muted.
     Open = -1, //-1?

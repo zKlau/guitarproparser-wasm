@@ -1,9 +1,10 @@
 // Chord-related enumerations
 use crate::error::{GpError, GpResult};
+use serde::{Serialize, Deserialize};
 
 /// Type of the chord.
 #[repr(u8)]
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum ChordType {
     /// Major chord.
     Major,
@@ -83,7 +84,7 @@ pub(crate) fn from_chord_type(value: &ChordType) -> u8 {
 
 /// Tonality of the chord
 #[repr(u8)]
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum ChordAlteration {
     /// Perfect.
     Perfect,
@@ -115,7 +116,7 @@ pub(crate) fn from_chord_alteration(value: &ChordAlteration) -> u8 {
 
 /// Extension type of the chord
 #[repr(u8)]
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum ChordExtension {
     None,
     /// Ninth chord.

@@ -1,9 +1,10 @@
 // Bend effect structures and constants
 use fraction::ToPrimitive;
+use serde::{Serialize, Deserialize};
 use crate::types::enums::BendType;
 
 /// A single point within the BendEffect
-#[derive(Debug, Clone, PartialEq, Eq, Default)]
+#[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
 pub struct BendPoint {
     pub position: u8,
     pub value: i8,
@@ -26,7 +27,7 @@ pub const GP_BEND_POSITION: f32 = 60.0;
 pub const GP_BEND_SEMITONE_LENGTH: f32 = 1.0;
 
 /// This effect is used to describe string bends and tremolo bars
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct BendEffect {
     pub kind: BendType,
     pub value: i16,

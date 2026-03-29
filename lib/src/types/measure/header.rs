@@ -6,7 +6,9 @@ use crate::types::enums::{DirectionSign, TripletFeel};
 use super::fermata::MeasureFermata;
 use super::marker::Marker;
 
-#[derive(Debug, Clone)]
+use serde::{Serialize, Deserialize};
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct MeasureHeader {
     pub number: u16,
     pub start: i64,
@@ -67,7 +69,7 @@ impl MeasureHeader {
 }
 
 /// This class can store the information about a group of measures which are repeated.
-#[derive(Debug, Clone, Default)]
+#[derive(Debug, Clone, Default, Serialize, Deserialize)]
 pub struct RepeatGroup {
     /// List of measure header indexes.
     pub measure_headers: Vec<usize>,

@@ -2,8 +2,10 @@
 use crate::model::chord::PitchClass;
 use crate::types::enums::{HarmonicType, Octave};
 
+use serde::{Serialize, Deserialize};
+
 /// A harmonic note effect
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct HarmonicEffect {
     pub kind: HarmonicType,
     //artificial harmonic

@@ -1,8 +1,10 @@
 // Beat display parameters
 use crate::types::enums::{TupletBracket, VoiceDirection};
 
+use serde::{Serialize, Deserialize};
+
 /// Parameters of beat display
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct BeatDisplay {
     pub(crate) break_beam: bool,
     pub(crate) force_beam: bool,

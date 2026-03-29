@@ -2,8 +2,10 @@
 use crate::error::GpResult;
 use crate::model::key_signature::{Duration, DURATION_EIGHTH, DURATION_SIXTEENTH, DURATION_THIRTY_SECOND};
 
+use serde::{Serialize, Deserialize};
+
 /// A tremolo picking effect.
-#[derive(Debug, Clone, PartialEq, Eq, Default)]
+#[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
 pub struct TremoloPickingEffect {
     pub duration: Duration,
 }

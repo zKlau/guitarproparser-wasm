@@ -1,9 +1,10 @@
 // Beat-related enumerations
 use crate::error::{GpError, GpResult};
+use serde::{Serialize, Deserialize};
 
 /// Beat status enumeration
 #[repr(u8)]
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum BeatStatus {
     Empty,
     Normal,
@@ -29,7 +30,7 @@ pub(crate) fn from_beat_status(value: &BeatStatus) -> u8 {
 
 /// Tuplet bracket enumeration
 #[repr(u8)]
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum TupletBracket {
     None,
     Start,
@@ -38,7 +39,7 @@ pub enum TupletBracket {
 
 /// All beat stroke directions
 #[repr(u8)]
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum BeatStrokeDirection {
     None,
     Up,
@@ -67,7 +68,7 @@ pub(crate) fn from_beat_stroke_direction(value: &BeatStrokeDirection) -> i8 {
 
 /// Characteristic of articulation
 #[repr(u8)]
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum SlapEffect {
     None,
     Tapping,
@@ -99,7 +100,7 @@ pub(crate) fn from_slap_effect(value: &SlapEffect) -> u8 {
 
 /// Voice directions indicating the direction of beams
 #[repr(u8)]
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum VoiceDirection {
     None,
     Up,

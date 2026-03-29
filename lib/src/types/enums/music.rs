@@ -1,9 +1,10 @@
 // Music-related enumerations
 use crate::error::{GpError, GpResult};
+use serde::{Serialize, Deserialize};
 
 /// Octave signs
 #[repr(u8)]
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum Octave {
     None,
     Ottava,
@@ -38,7 +39,7 @@ pub(crate) fn from_octave(value: &Octave) -> u8 {
 
 /// Values of auto-accentuation on the beat found in track RSE settings
 #[repr(u8)]
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub enum Accentuation {
     None,
     VerySoft,

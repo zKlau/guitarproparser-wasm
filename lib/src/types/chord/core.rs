@@ -4,8 +4,10 @@ use crate::types::enums::note::Fingering;
 use super::barre::Barre;
 use super::pitch_class::PitchClass;
 
+use serde::{Serialize, Deserialize};
+
 /// A chord annotation for beats
-#[derive(Debug, Clone, PartialEq, Eq, Default)]
+#[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
 pub struct Chord {
     pub length: u8,
     pub sharp: Option<bool>,

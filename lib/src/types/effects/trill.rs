@@ -3,8 +3,10 @@ use fraction::ToPrimitive;
 use crate::error::GpResult;
 use crate::model::key_signature::{Duration, DURATION_SIXTEENTH, DURATION_SIXTY_FOURTH, DURATION_THIRTY_SECOND};
 
+use serde::{Serialize, Deserialize};
+
 /// A trill effect.
-#[derive(Debug, Clone, PartialEq, Eq, Default)]
+#[derive(Debug, Clone, PartialEq, Eq, Default, Serialize, Deserialize)]
 pub struct TrillEffect {
     pub fret: i8,
     pub duration: Duration,

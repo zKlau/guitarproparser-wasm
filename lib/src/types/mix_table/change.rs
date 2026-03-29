@@ -1,10 +1,11 @@
 // MixTableChange structure
+use serde::{Serialize, Deserialize};
 use crate::model::rse::RseInstrument;
 use super::item::MixTableItem;
 use super::wah::WahEffect;
 
 /// A MixTableChange describes a change in mix parameters
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct MixTableChange {
     pub instrument: Option<MixTableItem>,
     pub rse: RseInstrument,

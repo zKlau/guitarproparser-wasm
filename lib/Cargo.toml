@@ -21,8 +21,11 @@ encoding_rs = "0.8"
 zip = "0.6"
 quick-xml = { version = "0.31", features = ["serialize"] }
 serde = { version = "1.0", features = ["derive"] }
+wasm-bindgen = { version = "0.2", optional = true }
+serde-wasm-bindgen = { version = "0.6", optional = true }
 
 [features]
 build-binary = ["clap"]
+wasm = ["wasm-bindgen", "serde-wasm-bindgen"]
 
 [dev-dependencies]

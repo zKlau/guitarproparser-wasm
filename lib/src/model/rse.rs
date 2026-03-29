@@ -8,11 +8,13 @@ use crate::{
 };
 // use crate::gp::*;
 
+use serde::{Serialize, Deserialize};
+
 /// Equalizer found in master effect and track effect.
 ///
 /// Attribute :attr:`RSEEqualizer.knobs` is a list of values in range from -6.0 to 5.9. Master effect has 10 knobs, track effect has 3
 /// knobs. Gain is a value in range from -6.0 to 5.9 which can be found in both master and track effects and is named as "PRE" in Guitar Pro 5.
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct RseEqualizer {
     pub knobs: Vec<f32>,
     pub gain: f32,
@@ -27,7 +29,7 @@ impl Default for RseEqualizer {
 }
 
 /// Master effect as seen in "Score information"
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct RseMasterEffect {
     pub volume: f32,
     pub reverb: f32,
@@ -46,7 +48,7 @@ impl Default for RseMasterEffect {
     }
 }
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct RseInstrument {
     pub instrument: i16,
     pub unknown: i16,
@@ -68,7 +70,7 @@ impl Default for RseInstrument {
     }
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct TrackRse {
     pub instrument: RseInstrument,
     pub equalizer: RseEqualizer,

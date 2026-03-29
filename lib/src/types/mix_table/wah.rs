@@ -1,11 +1,12 @@
 // WahEffect structure
+use serde::{Serialize, Deserialize};
 use crate::error::{GpError, GpResult};
 
 #[allow(dead_code)]
 pub const WAH_EFFECT_OFF: i8 = -2;
 pub const WAH_EFFECT_NONE: i8 = -1;
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct WahEffect {
     pub value: i8,
     pub display: bool,

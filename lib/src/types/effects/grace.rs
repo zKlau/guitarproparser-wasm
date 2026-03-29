@@ -3,8 +3,10 @@ use fraction::ToPrimitive;
 use crate::types::enums::GraceEffectTransition;
 use super::velocity::DEFAULT_VELOCITY;
 
+use serde::{Serialize, Deserialize};
+
 /// A grace note effect
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct GraceEffect {
     pub duration: u8,
     pub fret: i8,

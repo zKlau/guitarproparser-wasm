@@ -5,8 +5,10 @@ use crate::types::enums::{BeatStatus, Octave};
 use super::display::BeatDisplay;
 use super::effects::BeatEffects;
 
+use serde::{Serialize, Deserialize};
+
 /// A beat contains multiple notes
-#[derive(Debug, Clone, PartialEq)]
+#[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Beat {
     pub notes: Vec<Note>,
     pub duration: Duration,

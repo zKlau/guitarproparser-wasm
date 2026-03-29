@@ -1,9 +1,10 @@
 // Note effects structure
+use serde::{Serialize, Deserialize};
 use crate::types::effects::{BendEffect, GraceEffect, HarmonicEffect, TremoloPickingEffect, TrillEffect};
 use crate::types::enums::{Fingering, SlideType};
 
 /// Contains all effects which can be applied to one note.
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct NoteEffect {
     pub accentuated_note: bool,
     pub bend: Option<BendEffect>,

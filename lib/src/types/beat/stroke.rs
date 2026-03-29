@@ -1,8 +1,10 @@
 // Beat stroke effect
 use crate::types::enums::BeatStrokeDirection;
 
+use serde::{Serialize, Deserialize};
+
 /// A stroke effect for beats.
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct BeatStroke {
     pub direction: BeatStrokeDirection,
     pub value: u16,

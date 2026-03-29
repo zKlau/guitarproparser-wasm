@@ -18,8 +18,10 @@ use crate::types::enums::*;
 use crate::types::measure::MeasureHeader;
 use crate::types::song::*;
 
+use serde::{Serialize, Deserialize};
+
 // Struct utility to read file: https://stackoverflow.com/questions/55555538/what-is-the-correct-way-to-read-a-binary-file-in-chunks-of-a-fixed-size-and-stor
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Song {
     pub version: Version,
     pub clipboard: Option<Clipboard>,

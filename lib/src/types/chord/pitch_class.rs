@@ -1,10 +1,11 @@
 // PitchClass structure
 use fraction::ToPrimitive;
+use serde::{Serialize, Deserialize};
 
 pub const SHARP_NOTES: [&str; 12] = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 pub const FLAT_NOTES: [&str; 12] = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct PitchClass {
     pub note: String,
     pub just: i8,

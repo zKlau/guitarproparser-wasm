@@ -8,10 +8,12 @@ use crate::{
     types::{beat::*, enums::*},
 };
 
+use serde::{Serialize, Deserialize};
+
 const MAX_VOICES: usize = 2;
 
 /// A measure header contains metadata for measures over multiple tracks.
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Measure {
     pub number: usize,
     pub start: i64,

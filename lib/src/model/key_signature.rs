@@ -12,8 +12,10 @@ pub const DURATION_THIRTY_SECOND: u8 = 32;
 pub const DURATION_SIXTY_FOURTH: u8 = 64;
 pub const DURATION_HUNDRED_TWENTY_EIGHTH: u8 = 128;
 
+use serde::{Serialize, Deserialize};
+
 /// A time signature
-#[derive(Debug,Clone, PartialEq,Eq)]
+#[derive(Debug,Clone, PartialEq,Eq, Serialize, Deserialize)]
 pub struct TimeSignature {
     pub numerator: i8,
     pub denominator: Duration,
@@ -29,7 +31,7 @@ pub const KEY_SIGNATURES: [&str; 34] = ["F♭ major", "C♭ major", "G♭ major"
             "D♭ minor", "A♭ minor", "E♭ minor", "B♭ minor",
             "F minor", "C minor", "G minor", "D minor", "A minor", "E minor", "B minor",
             "F# minor", "C# minor", "G# minor", "D# minor", "A# minor", "E# minor"];
-#[derive(Debug,Clone,Default,PartialEq,Eq)]
+#[derive(Debug,Clone,Default,PartialEq,Eq, Serialize, Deserialize)]
 pub struct KeySignature {
     pub key: i8,
     pub is_minor: bool,
@@ -45,7 +47,7 @@ impl std::fmt::Display for KeySignature {
 
 const SUPPORTED_TUPLETS: [(u8, u8); 10] = [(1,1), (3,2), (5,4), (6,4), (7,4), (9,8), (10,8), (11,8), (12,8), (13,8)];
 
-#[derive(Debug,Clone,PartialEq,Eq)]
+#[derive(Debug,Clone,PartialEq,Eq, Serialize, Deserialize)]
 pub struct Duration {
     pub value:u16,
     pub dotted: bool,

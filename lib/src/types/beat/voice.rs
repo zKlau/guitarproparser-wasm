@@ -1,9 +1,10 @@
 // Voice structure containing beats
 use super::Beat;
 use crate::types::enums::VoiceDirection;
+use serde::{Serialize, Deserialize};
 
 /// A voice contains multiple beats
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Voice {
     //pub measure: Measure, //circular depth?
     pub measure_index: i16,

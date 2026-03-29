@@ -1,9 +1,10 @@
 // Effect-related enumerations
 use crate::error::{GpError, GpResult};
+use serde::{Serialize, Deserialize};
 
 /// All Bend presets
 #[repr(u8)]
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum BendType {
     /// No Preset.
     None,
@@ -75,7 +76,7 @@ pub(crate) fn from_bend_type(value: &BendType) -> i8 {
 
 /// All transition types for grace notes.
 #[repr(i8)]
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum GraceEffectTransition {
     ///No transition
     None = 0,
@@ -111,7 +112,7 @@ pub(crate) fn from_grace_effect_transition(value: &GraceEffectTransition) -> i8 
 
 /// Harmonic type enumeration
 #[repr(u8)]
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub enum HarmonicType {
     Natural = 1, //1
     Artificial,
@@ -129,3 +130,4 @@ pub(crate) fn from_harmonic_type(value: &HarmonicType) -> i8 {
         HarmonicType::Semi => 5,
     }
 }
+

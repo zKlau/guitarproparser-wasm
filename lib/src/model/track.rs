@@ -8,8 +8,10 @@ use crate::{
     types::enums::*,
 };
 
+use serde::{Serialize, Deserialize};
+
 /// Settings of the track.
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct TrackSettings {
     pub tablature: bool,
     pub notation: bool,
@@ -41,7 +43,7 @@ impl Default for TrackSettings {
     }
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Track {
     pub number: i32,
     pub offset: i32,

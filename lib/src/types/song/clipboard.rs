@@ -1,6 +1,8 @@
 // Clipboard structure for Guitar Pro files
 
-#[derive(Debug, Clone, PartialEq, Eq)]
+use serde::{Serialize, Deserialize};
+
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Clipboard {
     pub start_measure: i32,
     pub stop_measure: i32,

@@ -1,7 +1,9 @@
 // Marker structure for Guitar Pro measures
 
+use serde::{Serialize, Deserialize};
+
 /// A marker annotation for beats.
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Marker {
     pub title: String,
     pub color: i32,

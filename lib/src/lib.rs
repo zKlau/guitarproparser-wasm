@@ -5,6 +5,9 @@ pub mod model;
 pub mod traits;
 pub mod types;
 
+#[cfg(feature = "wasm")]
+pub mod wasm;
+
 // Re-export error types
 pub use crate::error::{GpError, GpResult};
 

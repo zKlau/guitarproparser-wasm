@@ -135,9 +135,11 @@ pub const CHANNEL_DEFAULT_NAMES: [&str; 128] = [
     "Gunshot",
 ];
 
+use serde::{Serialize, Deserialize};
+
 pub const DEFAULT_PERCUSSION_CHANNEL: u8 = 9;
 /// A MIDI channel describes playing data for a track.
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, Serialize, Deserialize)]
 pub struct MidiChannel {
     pub channel: u8,
     pub effect_channel: u8,

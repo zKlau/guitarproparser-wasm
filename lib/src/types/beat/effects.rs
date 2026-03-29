@@ -5,8 +5,10 @@ use crate::types::effects::BendEffect;
 use crate::types::enums::{BeatStrokeDirection, SlapEffect};
 use super::stroke::BeatStroke;
 
+use serde::{Serialize, Deserialize};
+
 /// This class contains all beat effects
-#[derive(Debug, Clone, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct BeatEffects {
     pub stroke: BeatStroke,
     pub has_rasgueado: bool,
