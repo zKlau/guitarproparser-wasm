@@ -38,7 +38,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - name: Publish to npm
-        working-directory: ./lib
-        run: wasm-pack publish
+        working-directory: ./lib/pkg
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
