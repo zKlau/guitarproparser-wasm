@@ -19,7 +19,7 @@ crate-type = ["cdylib", "rlib"]
 clap = { version = "4", features = ["derive"], optional = true } 
 fraction = "0.13"
 encoding_rs = "0.8"
-zip = "0.6"
+zip = { version = "0.6", default-features = false, features = ["deflate"] }
 quick-xml = { version = "0.31", features = ["serialize"] }
 serde = { version = "1.0", features = ["derive"] }
 wasm-bindgen = { version = "0.2", optional = true }
