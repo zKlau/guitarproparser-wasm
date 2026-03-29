@@ -1,6 +1,6 @@
 [package]
-name = "lib"
-version = "0.2.2"
+name = "sunett-parser"
+version = "0.0.3"
 authors = ["slundi"]
 edition = "2021"
 description = "Rust library and command line interface (CLI) for guitar tab files."

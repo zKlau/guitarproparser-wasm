@@ -13,7 +13,7 @@ name = "score_tool"
 path = "src/main.rs"
 
 [dependencies]
-lib = { path = "../lib" }
+sunett-parser = { path = "../lib" }
 clap = { version = "4", features = ["derive"] }
 fraction = "0.13"
 encoding_rs = "0.8"
