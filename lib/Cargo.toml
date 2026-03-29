@@ -13,6 +13,7 @@ readme = "README.md"
 [lib]
 name = "scorelib"
 path = "src/lib.rs"
+crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 clap = { version = "4", features = ["derive"], optional = true } 
