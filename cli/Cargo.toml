@@ -11,11 +11,10 @@ readme = "README.md"
 [[bin]]
 name = "score_tool"
 path = "src/main.rs"
-required-features = ["clap"]
 
 [dependencies]
 lib = { path = "../lib" }
-clap = { version = "4", features = ["derive"], optional = true }
+clap = { version = "4", features = ["derive"] }
 fraction = "0.13"
 encoding_rs = "0.8"
 
